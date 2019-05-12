@@ -16,7 +16,7 @@ script:
   - qmake CONFIG+=release PREFIX=/usr
   - make -j$(nproc)
   # make INSTALL_ROOT=appdir -j$(nproc) install ; find appdir/ # Needs to be made work instead of the following lines
-  - cp spp_initiator ./appdir/usr/bin # FIXME
+  - mkdir -p ./appdir/usr/bin ; cp spp_initiator ./appdir/usr/bin/ # FIXME
   - mkdir -p ./appdir/usr/share/applications ; cp spp_initiator.desktop ./appdir/usr/share/applications # FIXME
   - mkdir -p ./appdir/usr/share/icons/hicolor/scalable/apps ; touch ./appdir/usr/share/icons/hicolor/scalable/apps/spp_initiator.svg # FIXME
   - wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
